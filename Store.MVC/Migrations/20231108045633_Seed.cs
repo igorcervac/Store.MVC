@@ -7,12 +7,13 @@
 namespace Store.MVC.Migrations
 {
     /// <inheritdoc />
-    public partial class SeedData : Migration
+    public partial class Seed : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.InsertData(
+                schema: "storemvc",
                 table: "ProductTypes",
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
@@ -23,6 +24,7 @@ namespace Store.MVC.Migrations
                 });
 
             migrationBuilder.InsertData(
+                schema: "storemvc",
                 table: "Products",
                 columns: new[] { "Id", "Description", "Name", "Price", "ProductTypeId" },
                 values: new object[,]
@@ -44,66 +46,79 @@ namespace Store.MVC.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DeleteData(
+                schema: "storemvc",
                 table: "Products",
                 keyColumn: "Id",
                 keyValue: 1);
 
             migrationBuilder.DeleteData(
+                schema: "storemvc",
                 table: "Products",
                 keyColumn: "Id",
                 keyValue: 2);
 
             migrationBuilder.DeleteData(
+                schema: "storemvc",
                 table: "Products",
                 keyColumn: "Id",
                 keyValue: 3);
 
             migrationBuilder.DeleteData(
+                schema: "storemvc",
                 table: "Products",
                 keyColumn: "Id",
                 keyValue: 4);
 
             migrationBuilder.DeleteData(
+                schema: "storemvc",
                 table: "Products",
                 keyColumn: "Id",
                 keyValue: 5);
 
             migrationBuilder.DeleteData(
+                schema: "storemvc",
                 table: "Products",
                 keyColumn: "Id",
                 keyValue: 6);
 
             migrationBuilder.DeleteData(
+                schema: "storemvc",
                 table: "Products",
                 keyColumn: "Id",
                 keyValue: 7);
 
             migrationBuilder.DeleteData(
+                schema: "storemvc",
                 table: "Products",
                 keyColumn: "Id",
                 keyValue: 8);
 
             migrationBuilder.DeleteData(
+                schema: "storemvc",
                 table: "Products",
                 keyColumn: "Id",
                 keyValue: 9);
 
             migrationBuilder.DeleteData(
+                schema: "storemvc",
                 table: "Products",
                 keyColumn: "Id",
                 keyValue: 10);
 
             migrationBuilder.DeleteData(
+                schema: "storemvc",
                 table: "ProductTypes",
                 keyColumn: "Id",
                 keyValue: 1);
 
             migrationBuilder.DeleteData(
+                schema: "storemvc",
                 table: "ProductTypes",
                 keyColumn: "Id",
                 keyValue: 2);
 
             migrationBuilder.DeleteData(
+                schema: "storemvc",
                 table: "ProductTypes",
                 keyColumn: "Id",
                 keyValue: 3);

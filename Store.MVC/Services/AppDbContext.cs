@@ -18,6 +18,7 @@ namespace Store.MVC.Services
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.HasDefaultSchema("storemvc");
             modelBuilder.Entity<ProductType>().HasData(
                 new ProductType
                 {

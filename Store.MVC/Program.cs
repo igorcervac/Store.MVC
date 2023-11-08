@@ -13,7 +13,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseSerilog();
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<AppDbContext>(op => op.UseMySql(builder.Configuration.GetConnectionString("StoreMvcDB"), ServerVersion.Parse("8.0.21-Vitess")));
+builder.Services.AddDbContext<AppDbContext>(op => op.UseSqlServer(builder.Configuration.GetConnectionString("IgorSolutionsDB"), 
+    x => x.MigrationsHistoryTable("__EFMigrationsHistory", "storemvc")));
 builder.Services.AddScoped<IReadOnlyQueryableRepository<Product>, ProductRepository>();
 builder.Services.AddScoped<IReadOnlyRepository<ProductType>, ProductTypeRepository>();
 builder.Services.AddSession();
