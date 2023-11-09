@@ -13,7 +13,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseSerilog();
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<AppDbContext>(op => op.UseSqlServer(builder.Configuration.GetConnectionString("IgorSolutionsDB"), 
+builder.Services.AddDbContext<AppDbContext>(op => 
+    op.UseSqlServer(builder.Configuration.GetConnectionString("IgorSolutions"), 
     x => x.MigrationsHistoryTable("__EFMigrationsHistory", "storemvc")));
 builder.Services.AddScoped<IReadOnlyQueryableRepository<Product>, ProductRepository>();
 builder.Services.AddScoped<IReadOnlyRepository<ProductType>, ProductTypeRepository>();
